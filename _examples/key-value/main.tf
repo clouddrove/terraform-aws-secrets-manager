@@ -2,11 +2,11 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-module "secrets-manager" {
+module "secrets_manager" {
 
   source      = "../../"
-  name        = "vpc"
-  environment = "secrets-manager"
+  name        = "secrets-manager"
+  environment = "test"
   label_order = ["name", "environment"]
 
   secrets = [
