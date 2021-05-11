@@ -61,6 +61,7 @@ variable "secrets" {
   description = "List of secrets to keep in AWS Secrets Manager"
   type        = any
   default     = []
+  sensitive   = true
 }
 
 variable "unmanaged" {
