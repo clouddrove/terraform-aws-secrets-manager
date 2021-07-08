@@ -14,7 +14,7 @@ func Test(t *testing.T) {
 
 	terraformOptions := &terraform.Options{
 		// Source path of Terraform directory.
-		TerraformDir: "../_example/plaintext",
+		TerraformDir: "../_example/plaintetxt",
 	}
 
 	// This will run 'terraform init' and 'terraform application' and will fail the test if any errors occur
