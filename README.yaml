@@ -25,7 +25,7 @@ badges:
 #  description of this project
 # yamllint disable rule:line-length
 description: |-
-  Terraform module to create an Secrets Manager resource on AWS with ElasticC IP Addresses and Elastic Block Store.
+  Terraform module to create an Secrets Manager resource on AWS .
 
 # extra content
 include:
@@ -40,6 +40,7 @@ usage: |-
     module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
+    version             = "0.15.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
@@ -65,6 +66,7 @@ usage: |-
      module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
+    version             = "0.15.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
@@ -108,6 +110,7 @@ usage: |-
     module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
+      version             = "0.15.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
