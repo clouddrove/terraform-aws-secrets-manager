@@ -40,7 +40,7 @@ usage: |-
     module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-    version             = "0.15.0"
+    version     = "0.15.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
@@ -66,7 +66,7 @@ usage: |-
      module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-    version             = "0.15.0"
+    version     = "0.15.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
@@ -75,6 +75,7 @@ usage: |-
     {
     name        = "secret-kv-1"
     description = "This is a key/value secret"
+
     secret_key_value = {
     key1  = "value1"
     key2  = "value2"
@@ -92,6 +93,7 @@ usage: |-
     {
     name        = "secret-kv-2"
     description = "Another key/value secret"
+
     secret_key_value = {
     username = "user"
     password = "topsecret"
@@ -110,7 +112,7 @@ usage: |-
     module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-      version             = "0.15.0"
+      version   = "0.15.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
