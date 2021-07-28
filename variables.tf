@@ -21,7 +21,7 @@ variable "repository" {
 variable "label_order" {
   type        = list(any)
   default     = []
-  description = "Label order, e.g. `name`,`application`."
+  description = "Label order, e.g. `name`."
 }
 
 variable "managedby" {

@@ -112,7 +112,7 @@ usage: |-
     module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-      version   = "0.15.0"
+    version   = "0.15.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
