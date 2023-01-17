@@ -1,9 +1,14 @@
 output "secret_ids" {
+  value       = join("", aws_secretsmanager_secret.main.*.id)
   description = "Secret id list"
-  value       = aws_secretsmanager_secret.main.*.id
 }
 
 output "secret_arns" {
+  value       = join("", aws_secretsmanager_secret.main.*.arn)
   description = "Secret arn list"
-  value       = aws_secretsmanager_secret.main.*.arn
+}
+
+output "version_id" {
+  value       = join("", aws_secretsmanager_secret.main.*.arn)
+  description = "The unique identifier of the version of the secret."
 }
