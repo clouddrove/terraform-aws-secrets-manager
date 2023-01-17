@@ -31,9 +31,7 @@ jobs:
           - ${{ needs.versionExtract.outputs.minVersion }}
           - ${{ needs.versionExtract.outputs.maxVersion }}
         directory:
-          - _examples/binary
-          - _examples/key-value
-          - _examples/plaintext
+          - _examples/
     steps:
       - name: Checkout
         uses: actions/checkout@v2
