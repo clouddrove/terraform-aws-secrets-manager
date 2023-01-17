@@ -31,7 +31,9 @@ jobs:
           - ${{ needs.versionExtract.outputs.minVersion }}
           - ${{ needs.versionExtract.outputs.maxVersion }}
         directory:
-          - _examples
+          - _examples/binary
+          - _examples/key-value
+          - _examples/plaintext
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -57,6 +59,7 @@ jobs:
       - name: tflint
         uses: reviewdog/action-tflint@master
         with:
+          tflint_version: v0.29.0
           github_token: ${{ secrets.GITHUB }}
           working_directory: ${{ matrix.directory }}
           fail_on_error: 'true'
