@@ -24,6 +24,9 @@ badges:
   - name: "static-checks"
     image: "https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml/badge.svg"
     url: "https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml"
+  - name: "tfsec"
+    image: "https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/tfsec.yml/badge.svg"
+    url: "https://github.com/clouddrove/terraform-aws-secrets-manager/workflows/tfsec.yml"
 
 #  description of this project
 # yamllint disable rule:line-length
