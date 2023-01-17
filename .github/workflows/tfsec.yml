@@ -18,17 +18,17 @@ jobs:
           working_directory: ./_examples/
           full_repo_scan: true
 
-#      - name: Upload SARIF file
-#        uses: github/codeql-action/upload-sarif@v1
-#        with:
-#          # Path to SARIF file relative to the root of the repository
-#          sarif_file: tfsec.sarif
-#
-#      - name: tfsec commenter for PR
-#        uses: tfsec/tfsec-pr-commenter-action@main
-#        with:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB}}
-#          working_directory: ./_examples/
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: tfsec.sarif
+
+      - name: tfsec commenter for PR
+        uses: tfsec/tfsec-pr-commenter-action@main
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB}}
+          working_directory: ./_examples/
 
 
       - name: 'Terraform security scan Advanced'
