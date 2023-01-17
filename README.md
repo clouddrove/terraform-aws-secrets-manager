@@ -22,6 +22,9 @@
 <a href="https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml">
   <img src="https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml/badge.svg" alt="static-checks">
 </a>
+<a href="https://github.com/clouddrove/terraform-aws-secrets-manager/workflows/tfsec.yml">
+  <img src="https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/tfsec.yml/badge.svg" alt="tfsec">
+</a>
 
 
 </p>
@@ -199,6 +202,7 @@ Here is examples of how you can use this module in your inventory structure:
 |------|-------------|
 | secret\_arns | Secret arn list |
 | secret\_ids | Secret id list |
+| version\_id | The unique identifier of the version of the secret. |
 
 
 
