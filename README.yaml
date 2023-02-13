@@ -21,12 +21,12 @@ badges:
   - name: "Licence"
     image: "https://img.shields.io/badge/License-APACHE-blue.svg"
     url: "LICENSE.md"
-  - name: "static-checks"
-    image: "https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml/badge.svg"
-    url: "https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml"
   - name: "tfsec"
     image: "https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/tfsec.yml/badge.svg"
     url: "https://github.com/clouddrove/terraform-aws-secrets-manager/workflows/tfsec.yml"
+  - name: "static-checks"
+    image: "https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml/badge.svg"
+    url: "https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml"
 
 #  description of this project
 # yamllint disable rule:line-length
@@ -46,7 +46,7 @@ usage: |-
     module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-    version     = "1.0.1"
+    version     = "1.3.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
@@ -72,7 +72,7 @@ usage: |-
      module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-    version     = "0.15.0"
+    version     = "1.3.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
@@ -118,7 +118,7 @@ usage: |-
     module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-    version   = "1.0.1"
+    version   = "1.3.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
