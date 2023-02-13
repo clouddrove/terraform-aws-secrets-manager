@@ -46,7 +46,7 @@ usage: |-
     module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-    version     = "1.0.1"
+    version     = "1.3.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
@@ -72,7 +72,7 @@ usage: |-
      module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-    version     = "0.15.0"
+    version     = "1.3.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
@@ -118,7 +118,7 @@ usage: |-
     module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-    version   = "1.0.1"
+    version   = "1.3.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
