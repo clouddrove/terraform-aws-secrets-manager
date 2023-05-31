@@ -19,7 +19,7 @@
 <a href="LICENSE.md">
   <img src="https://img.shields.io/badge/License-APACHE-blue.svg" alt="Licence">
 </a>
-<a href="https://github.com/clouddrove/terraform-aws-secrets-manager/workflows/tfsec.yml">
+<a href="https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/tfsec.yml">
   <img src="https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/tfsec.yml/badge.svg" alt="tfsec">
 </a>
 <a href="https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml">
