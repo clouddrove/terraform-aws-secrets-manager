@@ -19,7 +19,7 @@ locals {
 }
 
 ##----------------------------------------------------------------------------- 
-## Labels module callled that will be used for naming and tags.   
+# Labels module callled that will be used for naming and tags.   
 ##-----------------------------------------------------------------------------
 module "labels" {
   source  = "clouddrove/labels/aws"
