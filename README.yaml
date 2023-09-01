@@ -15,18 +15,19 @@ github_repo: clouddrove/terraform-aws-secrets-manager
 
 # Badges to display
 badges:
-  - name: "Terraform"
-    image: "https://img.shields.io/badge/terraform-v1.1.7-green"
-    url: "https://www.terraform.io"
-  - name: "Licence"
-    image: "https://img.shields.io/badge/License-APACHE-blue.svg"
-    url: "LICENSE.md"
+  - name: "Latest Release"
+    image: "https://img.shields.io/github/release/clouddrove/terraform-aws-secrets-manager.svg"
+    url: "https://github.com/clouddrove/terraform-aws-secrets-manager/releases/latest"
   - name: "tfsec"
     image: "https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/tfsec.yml/badge.svg"
     url: "https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/tfsec.yml"
-  - name: "static-checks"
-    image: "https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml/badge.svg"
-    url: "https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml"
+  - name: "Licence"
+    image: "https://img.shields.io/badge/License-APACHE-blue.svg"
+    url: "LICENSE.md"
+
+prerequesties:
+  - name: Terraform 1.4.6
+    url: https://learn.hashicorp.com/terraform/getting-started/install.html
 
 #  description of this project
 # yamllint disable rule:line-length
@@ -46,7 +47,7 @@ usage: |-
     module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-    version     = "1.3.0"
+    version     = "2.0.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
@@ -72,7 +73,7 @@ usage: |-
      module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-    version     = "1.3.0"
+    version     = "2.0.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]
@@ -118,7 +119,7 @@ usage: |-
     module "secrets_manager" {
 
     source      = "clouddrove/secrets_manager/aws"
-    version   = "1.3.0"
+    version   = "2.0.0"
     name        = "secrets-manager"
     environment = "test"
     label_order = ["name", "environment"]

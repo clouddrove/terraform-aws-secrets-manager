@@ -42,6 +42,11 @@ variable "tags" {
   description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
 }
 
+variable "enabled" {
+  type        = bool
+  default     = true
+  description = "Flag to control the vpc creation."
+}
 
 variable "recovery_window_in_days" {
   description = "Specifies the number of days that AWS Secrets Manager waits before it can delete the secret. This value can be 0 to force deletion without recovery or range from 7 to 30 days."
@@ -74,4 +79,32 @@ variable "automatically_after_days" {
   description = "Specifies the number of days between automatic scheduled rotations of the secret."
   type        = number
   default     = 30
+}
+
+################################################################################
+# Secret Key Rotation Resource
+################################################################################
+
+variable "enable_rotation" {
+  description = "Determines whether secret rotation is enabled"
+  type        = bool
+  default     = false
+}
+
+variable "rotation_lambda_arn" {
+  description = "Specifies the ARN of the Lambda function that can rotate the secret"
+  type        = string
+  default     = ""
+}
+
+variable "rotation_rules" {
+  description = "A structure that defines the rotation configuration for this secret"
+  type        = map(any)
+  default     = {}
+}
+
+variable "replica" {
+  description = "Configuration block to support secret replication"
+  type        = map(any)
+  default     = {}
 }
