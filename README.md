@@ -13,17 +13,14 @@
 
 <p align="center">
 
-<a href="https://www.terraform.io">
-  <img src="https://img.shields.io/badge/terraform-v1.1.7-green" alt="Terraform">
-</a>
-<a href="LICENSE.md">
-  <img src="https://img.shields.io/badge/License-APACHE-blue.svg" alt="Licence">
+<a href="https://github.com/clouddrove/terraform-aws-secrets-manager/releases/latest">
+  <img src="https://img.shields.io/github/release/clouddrove/terraform-aws-secrets-manager.svg" alt="Latest Release">
 </a>
 <a href="https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/tfsec.yml">
   <img src="https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/tfsec.yml/badge.svg" alt="tfsec">
 </a>
-<a href="https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml">
-  <img src="https://github.com/clouddrove/terraform-aws-secrets-manager/actions/workflows/terraform.yml/badge.svg" alt="static-checks">
+<a href="LICENSE.md">
+  <img src="https://img.shields.io/badge/License-APACHE-blue.svg" alt="Licence">
 </a>
 
 
@@ -56,11 +53,7 @@ We have [*fifty plus terraform modules*][terraform_modules]. A few of them are c
 ## Prerequisites
 
 This module has a few dependencies: 
-
-- [Terraform 1.x.x](https://learn.hashicorp.com/terraform/getting-started/install.html)
-- [Go](https://golang.org/doc/install)
-- [github.com/stretchr/testify/assert](https://github.com/stretchr/testify)
-- [github.com/gruntwork-io/terratest/modules/terraform](https://github.com/gruntwork-io/terratest)
+- [Terraform 1.4.6](https://learn.hashicorp.com/terraform/getting-started/install.html)
 
 
 
@@ -80,7 +73,7 @@ Here is examples of how you can use this module in your inventory structure:
   module "secrets_manager" {
 
   source      = "clouddrove/secrets_manager/aws"
-  version     = "1.3.0"
+  version     = "2.0.0"
   name        = "secrets-manager"
   environment = "test"
   label_order = ["name", "environment"]
@@ -106,7 +99,7 @@ Here is examples of how you can use this module in your inventory structure:
    module "secrets_manager" {
 
   source      = "clouddrove/secrets_manager/aws"
-  version     = "1.3.0"
+  version     = "2.0.0"
   name        = "secrets-manager"
   environment = "test"
   label_order = ["name", "environment"]
@@ -152,7 +145,7 @@ Here is examples of how you can use this module in your inventory structure:
   module "secrets_manager" {
 
   source      = "clouddrove/secrets_manager/aws"
-  version   = "1.3.0"
+  version   = "2.0.0"
   name        = "secrets-manager"
   environment = "test"
   label_order = ["name", "environment"]
@@ -185,13 +178,18 @@ Here is examples of how you can use this module in your inventory structure:
 |------|-------------|------|---------|:--------:|
 | attributes | Additional attributes (e.g. `1`). | `list(any)` | `[]` | no |
 | automatically\_after\_days | Specifies the number of days between automatic scheduled rotations of the secret. | `number` | `30` | no |
+| enable\_rotation | Determines whether secret rotation is enabled | `bool` | `false` | no |
+| enabled | Flag to control the vpc creation. | `bool` | `true` | no |
 | environment | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
 | label\_order | Label order, e.g. `name`. | `list(any)` | `[]` | no |
 | managedby | ManagedBy, eg 'CloudDrove' | `string` | `"hello@clouddrove.com"` | no |
 | name | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | recovery\_window\_in\_days | Specifies the number of days that AWS Secrets Manager waits before it can delete the secret. This value can be 0 to force deletion without recovery or range from 7 to 30 days. | `number` | `30` | no |
+| replica | Configuration block to support secret replication | `map(any)` | `{}` | no |
 | repository | Terraform current module repo | `string` | `"https://github.com/clouddrove/terraform-aws-secrets-manager"` | no |
 | rotate\_secrets | List of secrets to keep and rotate in AWS Secrets Manager | `any` | `[]` | no |
+| rotation\_lambda\_arn | Specifies the ARN of the Lambda function that can rotate the secret | `string` | `""` | no |
+| rotation\_rules | A structure that defines the rotation configuration for this secret | `map(any)` | `{}` | no |
 | secrets | List of secrets to keep in AWS Secrets Manager | `any` | `[]` | no |
 | tags | Additional tags (e.g. map(`BusinessUnit`,`XYZ`). | `map(any)` | `{}` | no |
 | unmanaged | Terraform must ignore secrets lifecycle. Using this option you can initialize the secrets and rotate them outside Terraform, thus, avoiding other users to change or rotate the secrets by subsequent runs of Terraform | `bool` | `false` | no |
