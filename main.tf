@@ -59,8 +59,9 @@ resource "aws_secretsmanager_secret" "main" {
 # Secret Key Version Resources
 ##----------------------------------------------------------------------------- 
 resource "aws_secretsmanager_secret_version" "sm-sv" {
-  count         = var.unmanaged && var.enabled ? 0 : length(local.secrets)
-  secret_id     = aws_secretsmanager_secret.main.*.id[count.index]
+  count = var.unmanaged && var.enabled ? 0 : length(local.secrets)
+
+  secret_id     = aws_secretsmanager_secret.main[0].id
   secret_string = lookup(element(local.secrets, count.index), "secret_string")
   secret_binary = lookup(element(local.secrets, count.index), "secret_binary") != null ? base64encode(lookup(element(local.secrets, count.index), "secret_binary")) : null
   depends_on    = [aws_secretsmanager_secret.main]
@@ -68,7 +69,7 @@ resource "aws_secretsmanager_secret_version" "sm-sv" {
 
 resource "aws_secretsmanager_secret_version" "sm-svu" {
   count         = var.unmanaged && var.enabled ? length(local.secrets) : 0
-  secret_id     = aws_secretsmanager_secret.main.*.id[count.index]
+  secret_id     = aws_secretsmanager_secret.main[*].id[count.index]
   secret_string = lookup(element(local.secrets, count.index), "secret_string")
   secret_binary = lookup(element(local.secrets, count.index), "secret_binary") != null ? base64encode(lookup(element(local.secrets, count.index), "secret_binary")) : null
   depends_on    = [aws_secretsmanager_secret.main]
@@ -87,7 +88,7 @@ resource "aws_secretsmanager_secret_version" "sm-svu" {
 resource "aws_secretsmanager_secret_rotation" "main" {
   count               = var.enabled && var.enable_rotation ? 1 : 0
   rotation_lambda_arn = var.rotation_lambda_arn
-  secret_id           = aws_secretsmanager_secret.main.*.id
+  secret_id           = aws_secretsmanager_secret.main[*].id
   dynamic "rotation_rules" {
     for_each = [var.rotation_rules]
     content {
