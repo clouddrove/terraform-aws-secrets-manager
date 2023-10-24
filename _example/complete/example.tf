@@ -1,15 +1,18 @@
 provider "aws" {
-  region = "eu-west-1"
+  region = local.region
+}
+
+locals {
+  region      = "eu-west-1"
+  name        = "secrets_manager"
+  environment = "test"
 }
 
 module "secrets_manager" {
-  # source  = "clouddrove/secrets_manager/aws"
-  # version = "2.0.0"
   source = "../../"
 
-  name        = "secrets-manager"
-  environment = "test"
-  label_order = ["name", "environment"]
+  name        = local.name
+  environment = local.environment
   secrets = [
     {
       name                    = "secret-11"
