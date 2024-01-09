@@ -8,5 +8,5 @@ jobs:
     secrets:
       GITHUB: ${{ secrets.GITHUB }}
     with:
-      tfcheck: 'key-vault / Evaluate Terraform versions (1.6.1, ./_example/key-value/)'
+      tfcheck: 'binary / Check code format'
 ...
