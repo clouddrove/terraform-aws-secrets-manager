@@ -8,12 +8,12 @@ jobs:
   binary:
     uses: clouddrove/github-shared-workflows/.github/workflows/tf-checks.yml@1.2.4
     with:
-      working_directory: './_example/binary/'
+      working_directory: './examples/binary/'
   complete:
     uses: clouddrove/github-shared-workflows/.github/workflows/tf-checks.yml@1.2.4
     with:
-      working_directory: './_example/complete/'
+      working_directory: './examples/complete/'
   key-vault:
     uses: clouddrove/github-shared-workflows/.github/workflows/tf-checks.yml@1.2.4
     with:
-      working_directory: './_example/key-value/'
+      working_directory: './examples/key-value/'
