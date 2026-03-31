@@ -24,4 +24,3 @@
 | secret\_arns | Secret arn list |
 | secret\_ids | Secret id list |
 | version\_id | The unique identifier of the version of the secret. |
-

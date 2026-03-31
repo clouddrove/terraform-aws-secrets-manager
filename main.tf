@@ -18,8 +18,8 @@ locals {
   ]
 }
 
-##----------------------------------------------------------------------------- 
-# Labels module callled that will be used for naming and tags.   
+##-----------------------------------------------------------------------------
+# Labels module callled that will be used for naming and tags.
 ##-----------------------------------------------------------------------------
 module "labels" {
   source  = "clouddrove/labels/aws"
@@ -33,9 +33,9 @@ module "labels" {
   label_order = var.label_order
 }
 
-##----------------------------------------------------------------------------- 
+##-----------------------------------------------------------------------------
 # Secret Key Main Resource
-##----------------------------------------------------------------------------- 
+##-----------------------------------------------------------------------------
 resource "aws_secretsmanager_secret" "main" {
   count                   = var.enabled ? length(local.secrets) : 0
   name                    = lookup(element(local.secrets, count.index), "name")
@@ -55,9 +55,9 @@ resource "aws_secretsmanager_secret" "main" {
   tags = module.labels.tags
 }
 
-##----------------------------------------------------------------------------- 
+##-----------------------------------------------------------------------------
 # Secret Key Version Resources
-##----------------------------------------------------------------------------- 
+##-----------------------------------------------------------------------------
 resource "aws_secretsmanager_secret_version" "sm-sv" {
   count = var.unmanaged && var.enabled ? 0 : length(local.secrets)
 
@@ -82,9 +82,9 @@ resource "aws_secretsmanager_secret_version" "sm-svu" {
   }
 }
 
-##----------------------------------------------------------------------------- 
+##-----------------------------------------------------------------------------
 # Secret Key Rotation Resource
-##----------------------------------------------------------------------------- 
+##-----------------------------------------------------------------------------
 resource "aws_secretsmanager_secret_rotation" "main" {
   count               = var.enabled && var.enable_rotation ? 1 : 0
   rotation_lambda_arn = var.rotation_lambda_arn
