@@ -12,6 +12,7 @@ jobs:
       working_directory: './examples/binary/'
       provider: aws
       enable_plan: true
+      show_plan: false
     secrets:
       BUILD_ROLE: ${{ secrets.BUILD_ROLE }}
   complete:
@@ -21,6 +22,7 @@ jobs:
       working_directory: './examples/complete/'
       provider: aws
       enable_plan: true
+      show_plan: false
     secrets:
       BUILD_ROLE: ${{ secrets.BUILD_ROLE }}
   key-vault:
@@ -30,5 +32,6 @@ jobs:
       working_directory: './examples/key-value/'
       provider: aws
       enable_plan: true
+      show_plan: false
     secrets:
       BUILD_ROLE: ${{ secrets.BUILD_ROLE }}
