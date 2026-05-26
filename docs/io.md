@@ -6,6 +6,7 @@
 | enable\_rotation | Determines whether secret rotation is enabled | `bool` | `false` | no |
 | enabled | Flag to control the vpc creation. | `bool` | `true` | no |
 | environment | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
+| extra\_tags | Additional tags (e.g. map(`CostCenter`,`platform`)). | `map(string)` | `{}` | no |
 | label\_order | Label order, e.g. `name`. | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
 | managedby | ManagedBy, eg 'CloudDrove' | `string` | `"hello@clouddrove.com"` | no |
 | name | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
