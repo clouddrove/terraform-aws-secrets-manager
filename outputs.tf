@@ -1,5 +1,5 @@
 output "secret_ids" {
-  value       = join("", aws_secretsmanager_secret.main[*].id)
+  value       = aws_secretsmanager_secret.main[*].id
   description = "Secret id list"
 }
 
