@@ -11,4 +11,5 @@ output "secret_arns" {
 output "version_ids" {
   value       = module.secrets_manager.version_ids
   description = "Map of secret name to secret version ID."
+  sensitive   = true
 }
