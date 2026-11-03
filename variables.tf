@@ -45,7 +45,7 @@ variable "attributes" {
 variable "enabled" {
   type        = bool
   default     = true
-  description = "Flag to control the vpc creation."
+  description = "Flag to control the secrets manager resources creation."
 }
 
 variable "recovery_window_in_days" {
