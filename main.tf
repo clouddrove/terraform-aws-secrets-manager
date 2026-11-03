@@ -110,3 +110,4 @@ resource "aws_secretsmanager_secret_rotation" "main" {
 
   depends_on = [aws_secretsmanager_secret.main]
 }
+
